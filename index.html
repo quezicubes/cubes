@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+  <head>
+
+      <meta charset="utf-8">
+     <title>Quezi Cubes</title>
+	 <meta name="description" content="Na tej stronie znajdziesz pomoce aby wejść w świat speedcubingu">
+     <meta name="keywords" content="3x3, 2x2, 4x4, 5x5, 6x6, 7x7, megaminx, pyraminx, sq1, skweb, cfop, lbl, f2l, oll, pll">
+     <meta name="author" content="Quezi">
+     <meta http-equiv="X-Ua-Compatible" content="IE=edge,chrome=1">
+     <link rel="stylesheet" href="style.css" type="text/css" />
+     <link rel="stylesheet" href="css/fontello.css" type="text/css" />
+	 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dongle&family=PT+Serif:wght@700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@1,500&display=swap" rel="stylesheet">
+     
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	 <script src="jquery.scrollTo.min.js"></script>
+	 <script>
+	 jQuery(function($)
+	 {
+	   //zresetuj scrolla
+	   $.scrollTo(0);
+	   $('.scrollup').click(function() { $.scrollTo($('body'), 1000); });
+	   $('#link1').click(function() { $.scrollTo($('#notacje'), 500); });
+	   $('#link2').click(function() { $.scrollTo($('#cross'), 1000); });
+	   $('#link3').click(function() { $.scrollTo($('#1warstwa'), 1000); });
+	   $('#link4').click(function() { $.scrollTo($('#2warstwa'), 1000); });
+	   $('#link5').click(function() { $.scrollTo($('#zoltycross'), 1000); });
+	   $('#link6').click(function() { $.scrollTo($('#permutacjakrawedzi'), 1000); });
+	   $('#link7').click(function() { $.scrollTo($('#permutacjarogow'), 1000); });
+	 }
+	 
+	 );
+	 //pokaż podczas przewijania
+	 $(window).scroll(function()
+	 {
+	   if($(this).scrollTop()>300) $('.scrollup').fadeIn();
+	   else $('.scrollup').fadeOut();
+	 }
+	 );
+	 </script>
+	 </head>
+
+	 <body>
+	 <div id ="container">
+	 <a href="#" class="scrollup"><img src="up.png" width="64" height="64"></a>
+	  <div id="rectangle">
+	  <div id="logo">
+	  <img src="3x3copy.png" width="80" height="80">
+	  </div>
+	   <div id="tytul">
+	  LBL - Layer by layer (warstwa po warstwie)
+	  </div>
+	  </div>
+	  </BR>
+	  <div class="spis">
+	  </br>
+	  <center><h1>SPIS TREŚCI</h1></center>
+	  </br>
+	  <li type="1"><a id="link1" href="#">NOTACJE NA KOSTCE</a></li>
+	  <li type="1"><a id="link2" href="#">BIAŁY CROSS</a></li>
+	  <li type="1"><a id="link3" href="#">PIERWSZA WARSTWA</a></li>
+	  <li type="1"><a id="link4" href="#">DRUGA WARSTWA</a></li>
+	  <li type="1"><a id="link5" href="#">ŻÓŁTY CROSS</a></li>
+	  <li type="1"><a id="link6" href="#">PERMUTACJA KRAWĘDZI</a></li>
+	  <li type="1"><a id="link7" href="#">PERMUTACJA NAROŻNIKÓW</a></li>
+	  </div>
+	  </br>
+	  <div class="content">
+	  <center><h1 id="notacje">NOTACJE NA KOSTCE</h1></center>
+	  <div>
+	  </br>W tej metodzie jak sama nazwa mówi kostkę będziemy układali warstwa po warstwie. Będziemy musieli nauczyć się kilku prostych algorytmów. Ale zacznijmy od początku czyli od oznaczeń ruchów na naszej kostce:</br></br>
+	  <li class="circle">R - ruch prawą ścianką w górę</li>
+	  <li>R' - ruch prawą ścianką w dół</li>
+	  <li>L - ruch lewą ścianką w dół</li>
+	  <li>L' - ruch lewą ścianką w górę</li>
+	  <li>U - ruch górną ścianką w lewo</li>
+	  <li>U' - ruch górną ścianką w prawo</li>
+	  <li>F - ruch przednią ścianką w prawo</li>
+	  <li>F' - ruch przednią ścianką w lewo</li>
+	  <li>B - ruch tylnią ścianką w lewo</li>
+	  <li>B' - ruch tylnią ścianką w prawo</li>
+	  <li>D - ruch dolną ścianką w prawo</li>
+	  <li>D' - ruch dolną ścianką w lewo</li>
+	  <li>(litera)2 - robimy dany ruch dwa razy</li>
+	  </li>
+	  </br></br>
+	  Poniżej są notacje przedstawione graficznie:</br></br>
+	  <center><img src="notacje.png" height="210" width="400" style="border-radius: 10px;"></center></br>
+	  </div>
+	  <center><h1 id="cross">BIAŁY CROSS</h1></center>
+	  <div>
+	  Teraz możemy przejść do 1 etapu jakim jest cross. Cross można zrobić na każdym kolorze ale my będziemy zaczynać tylko od białego. Ten etap jest intuicyjny więc nie będziemy tutaj używali żadnych algorytmów. Dla ułatwienia możemy zacząć od ustawienia wszystkich białych krawędzi dookoła żółtego centra:</br></br>
+	  <center><img src="cross.png" height="200" width="200" style="border-radius: 20px"></center></br>
+	  Kiedy uda nam się zrobić to co na obrazku powyżej to naszym następnym krokiem będzie połączanie krawędzi z centrami o tym samym kolorze:</br></br>
+	  <center><img src="cross.png" height="200" width="200" style="border-radius: 20px"><i class="icon-right"></i><img src="cross2.png" height="200" width="200" style="border-radius: 20px"><i class="icon-right"></i><img src="cross3.png" height="200" width="200" style="border-radius: 20px"></center></br>
+	  Jak możemy zobaczyć powyżej, musimy połączoną krawędź z centrem dać na dół czyli dookoła białego centra. Łączymy tak każdą krawędź i dajemy na dół aż uzyskamy biały cross.
+	  <center><img src="cross4.png" height="200" width="200" style="border-radius: 20px"></center></br>
+	  </div>
+	  <center><h1 id="1warstwa">PIERWSZA WARSTWA</h1></center>
+	  <div>
+	  Ułożony cross dajemy na dół i przechodzimy do drugiego etapu jakim jest zrobienie pierwszej warstwy. Będziemy tutaj używali jednego algorytmu jaki zaraz przedstawię. Algorytm ten będzie nam wstawiał narożniki obok białego crossa. Będziemy musieli powtarzać kombinację kilka razy w niektórych sytuacjach.</br></br>
+	  <center><img src="1warstwa.png" height="200" width="200" style="border-radius: 20px"></center></br>
+	  Orientacja narożnika nie ma tu znaczenia, liczy się tylko dobre dopasowanie kolorów czyli jeśli zdecydujemy się wstawiać narożnik pomiędzy czerwonym a zielonym centrem to nasz narożnik musi być czerwono-zielono-biały.
+	  Żeby wstawić narożnik musimy wykonać następujące ruchy: <b>R U R' U'</b>.</br></br>
+	  <center><img src="1warstwa.png" height="200" width="200" style="border-radius: 20px"><i class="icon-right"></i><img src="1warstwa1.png" height="200" width="200" style="border-radius: 20px"></center>
+	  Powtarzamy to wszystko dla każdego białego narożnika żeby uzyskać następujący efekt:</br>
+	  </div>
+	  <div>
+	  <center><img src="1warstwa2.png" height="200" width="200" style="border-radius: 20px"></center></br>
+	  <center><h1 id="2warstwa">DRUGA WARSTWA</h1></center>
+	  Przechodzimy do 3 etapu gdzie będziemy robić drugą warstwę. Tutaj będziemy używali dwóch nieco dłuższych algorytmów.
+	  W tym etapie wstawiamy krawędzie nad wcześciej wstawione narożniki. Pierwszą sytuacją będzie wstawianie krawędzi w lewą stronę tak jak widzimy poniżej:</br>
+	  <center><img src="2warstwa.png" height="200" width="200" style="border-radius: 20px"></center></br>
+	  Krawędź łączymy, tak jak w pierwszym etapie, żeby pasowała kolorem do centra. Ustawiamy połączoną krawędź do siebie i wykonujemy następujący algorytm:</br> <b>U' L' U L U F U' F'</b>.</br>
+	  Powinniśmy uzyskać następujący efekt:</br></br>
+	  <center><img src="2warstwa.png" height="200" width="200" style="border-radius: 20px"><i class="icon-right"></i><img src="2warstwa1.png" height="200" width="200" style="border-radius: 20px"></center></br>
+	  W drugiej sytuacji krawędź będziemy wstawiali w prawą stronę.</br></br>
+	  <center><img src="2warstwa2.png" height="200" width="200" style="border-radius: 20px"></center></br>
+	  Robimy wszystko to co w pierwszej sytuacji tylko tym razem będziemy wykorzystywali następujący algorytm:<b> U R U' R' U' F' U F</b>.</br>
+	  Powinniśmy uzyskać taki efekt:</br></br>
+	  <center><img src="2warstwa2.png" height="200" width="200" style="border-radius: 20px"><i class="icon-right"></i><img src="2warstwa1.png" height="200" width="200" style="border-radius: 20px"></center></br>
+	  Powtarzamy ten proces dla każdej krawędzi omijając przy tym krawędzie z żółtym kolorem. Na koniec uzyskujemy ułożoną całą drugą warstwę.</br></br>
+	  <center><img src="2warstwa3.png" height="200" width="200" style="border-radius: 20px"></center></br>
+	  </div>
+	  <center><h1 id="zoltycross">ŻÓŁTY CROSS</h1></center>
+	  <div>
+	  Pozostaje nam ostatni etap gdzie będziemy układali całą górną warstwę. Potrzebujemy do tego kilku nowych algorytmów. Podzielmy sobie ten etap na kilka poziomów. W pierwszym poziomie będziemy chcieli ułożyć żółty cross na górze naszej kostki.</br></br>
+	  <center><img src="zolty.png" height="200" width="200" style="border-radius: 20px"></center></br></br>
+	  Do tego potrzebujemy algorytmu, który czasem trzeba będzie powtórzyć kilka razy:</br><b> F R U R' U' F'</b>.</br>
+	  Kiedy trafimy na sytuację poniżej algorytm trzeba będzie powtórzyć dwa razy(na niebiesko zaznaczyłem elementy, które mogą być obrócone żółtym kolorem do góry lecz to nam nie przeszkadza w zobieniu crossa).</br></br>
+	  <center><img src="zolty1.png" height="200" width="200" style="border-radius: 20px"></center></br>
+	  Dla kolejnej sytuacji algorytm użyjemy tylko raz.</br></br>
+	  <center><img src="zolty2.png" height="200" width="200" style="border-radius: 20px"></center></br>
+	  Zostaje nam ostatnia sytuacja, dla której nasz algorytm jest lekko zmodyfikowany:</br><b> F R U R' U' R U R' U' F' U F R U R' U' F'</b>.</br></br>
+	  <center><img src="zolty3.png" height="200" width="200" style="border-radius: 20px"></center></br>
+	  </div>
+	  <center><h1 id="permutacjakrawedzi">PERMUTACJA KRAWĘDZI</h1></center>
+	  <div>
+	  Kiedy już wiemy jak zrobić żółty cross to przejdźmy do drugiego poziomu jakim będzie permutacja krawędzi. Na tym etapie wystąpią nam dwa przypadki gdzie będziemy wykorzystywać dwa algorytmy. Pierwszy przypadek jest wtedy kiedy mamy dobrze połączony kolor krawędzi z centrem z przodu naszej kostki i z tyłu:</br></br>
+	  <center><img src="krawedz.png" height="200" width="200" style="border-radius: 20px"></center></br>
+	  Użyjemy tutaj tego algorytmu:<b> R U R' U R U2 R'</b>.</br></br>
+	  <center><img src="krawedz.png" height="200" width="200" style="border-radius: 20px"><i class="icon-right"></i><img src="krawedz1.png" height="200" width="200" style="border-radius: 20px"></center></br>
+	  W drugim przypadku mamy obok siebie dobrze ustawione krawędzie. Przed wykonaniem algorytmu ustawimy je tak żeby jedna dobrze ustawiona krawędź była po naszej prawej stronie a druga z tyłu kostki:</br></br>
+	  <center><img src="krawedz2.png" height="200" width="200" style="border-radius: 20px"></center></br>
+	  Użyjemy tutaj tego algorytmu:<b> R U R' U R U2 R' U</b>.</br></br>
+	  <center><img src="krawedz2.png" height="200" width="200" style="border-radius: 20px"><i class="icon-right"></i><img src="krawedz1.png" height="200" width="200" style="border-radius: 20px"></center></br>
+	  </div>
+	  <center><h1 id="permutacjarogow">PERMUTACJA NAROŻNIKÓW</h1></center>
+	  <div id="permutacjarogow">
+	  Został nam tylko ostatni etap jakim jest ułożenie naszych narożników. Tutaj potrzebujemy jednego nowego algorytmu, który ustawi nasze narożniki w dobrej kolejności. Szukamy czy mamy chociaż jeden dobrze ustawiony narożnik czyli jeśli narożnik jest pomiędzy czerwonym i zielonym centrem to musi być czerwono-zielono-żółty. Jeśli nie ma takiego to nic się nie dzieje a jeśli mamy to ustawiamy go po prawej stronie tak jak widzimy poniżej (orientacja może się różnić, ważne jest żeby zgadzały się kolory): </br>
+	  <center><img src="naroznik.png" height="200" width="200" style="border-radius: 20px"></center></br>
+	  Jeśli mamy sytuację z jednym dobrze ustawionym narożnikiem to wykonujemy ten algorytm aż reszta narożników się dobrze ustawi:<b> U R U' L' U R' U' L</b>.</br>
+	  Jeśli nie mamy żadnego narożnika na swoim miejscu to wykonujemy powyższy algorytm do momentu ustawienia się chociaż jednego narożnika i postępujemy tak jak w przypadku powyżej.</br>
+	  Kiedy każdy narożnik jest na swoim miejscu to przystępujemy do ułożenia całej kostki.<b> BARDZO WAŻNE</b> Teraz odwracamy naszą kostkę białą ścianką do góry i będziemy postępowali tak jak w pierwszym etapie czyli będziemy wstawiali narożniki.</br></br>
+	  <center><img src="naroznik2.png" height="200" width="200" style="border-radius: 20px"></center></br>
+	  Kiedy mamy pierwszy narożnik w prawym dolnym rogu to wykonujemy ten algorytm (kostka się zniszczy i nie przejmujemy się tym, ponieważ kostka wraca do swojego stanu po tym jak powtórzymy algorytm 6 razy):<b> R U R' U'</b> robimy algorytm do momentu aż nasz narożnik będzie odwrócony żółtą stroną na dół. Następnie ruchem<b> D</b> szukamy kolejnego obróconego narożnika. Kiedy taki znajdziemy wykonujemy algorytm do momentu aż się obróci na dół i tak z każdym kolejnym aż nasza kostka będzie ułożona.</br></br>
+	  <center><img src="naroznik2.png" height="200" width="200" style="border-radius: 20px"><i class="icon-right"></i><img src="ulozona.png" height="200" width="200" style="border-radius: 20px"></center>
+	  </div>
+	  </br>
+	  <div id="algorytmy">
+	  Tutaj przedstawie jeszcze raz wszystkie potrzebne algorytmy do ułożenia kostki:</br>
+	  <b>R U R' U'</b> - wstawianie narożników w pierwszej warstwie</br>
+	  <b>U' L' U L U F U' F'</b> - wstawianie krawędzi w drugiej warstwie w lewą stronę</br>
+	  <b>U R U' R' U' F' U F</b> - wstawianie krawędzi w drugiej warstwie w prawą stronę</br>
+	  <b>F R U R' U' F'</b> - żółty cross</br>
+	  <b>F R U R' U' R U R' U' F' U F R U R' U' F'</b> - żółty cross</br>
+	  <b>R U R' U R U2 R'</b> - permutacja krawędzi</br>
+	  <b>R U R' U R U2 R' U</b> - permutacja krawędzi</br>
+	  <b>U R U' L' U R' U' L</b> - permutacja narożników</br>
+	  </div>
+	 </div>
+	 </br>
+	  <div id="lblstopka">
+	  2022 &copy; Autor: Quezi</br> 
+	  W razie jakiś problemów lub błędów na stronie proszę pisać na tego maila: quezicubes@gmail.com
+	  
+	  </div>
+	  </div>
+	 
+	 </body>
+	 
